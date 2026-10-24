@@ -5,3 +5,5 @@
 - `index.html`：课程目录
 - `ch4.html`：第四章 音响的系统构成
 - `analog-synthesis.html`：电子音乐史 · 模拟合成与乐器
+- `nma.html`：新媒体艺术理论 · 课程目录（单独密码）
+- `nma-01.html`：新媒体艺术理论 · 第一课 从杜尚到黑川良一

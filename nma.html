@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>新媒体艺术理论</title>
+<style>
+:root{--bg:#EDF0F2;--surface:#FFFFFF;--ink:#141D26;--muted:#566373;--line:#D0D8DF;--accent:#0A7580;--accent-ink:#FFFFFF;--hot:#D4433A;
+--sans:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;--serif:"Noto Serif SC","Songti SC","STSong","SimSun",serif;--mono:"JetBrains Mono",ui-monospace,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#0D1216;--surface:#151C22;--ink:#E4E9EE;--muted:#8D9AA8;--line:#2A3540;--accent:#36BCC6;--accent-ink:#04272A;--hot:#FF6D60}}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);display:grid;place-items:center;padding:24px 16px}
+form{width:100%;max-width:380px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:28px 24px 22px}
+.eb{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--accent)}
+h1{font-family:var(--serif);font-weight:900;font-size:28px;margin:6px 0 4px;line-height:1.25}
+p{color:var(--muted);font-size:14px;margin:0 0 18px;line-height:1.6}
+label{display:block;font-size:13px;color:var(--muted);margin:12px 0 6px}
+input{width:100%;font:inherit;font-size:16px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+input:focus{outline:2px solid var(--accent);outline-offset:1px}
+button{width:100%;margin-top:16px;font:inherit;font-size:15px;font-weight:700;padding:11px 18px;border:0;border-radius:8px;background:var(--accent);color:var(--accent-ink);cursor:pointer}
+button:disabled{opacity:.6;cursor:wait}
+.msg{min-height:22px;font-size:13px;margin-top:10px}
+.msg.err{color:var(--hot)}
+.lock{display:inline-block;width:14px;height:14px;vertical-align:-2px;margin-right:4px}
+</style>
+</head><body>
+<form id="f" autocomplete="off">
+  <div class="eb">课程目录</div>
+  <h1>新媒体艺术理论</h1>
+  <p><svg class="lock" viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="8" rx="1.5" fill="currentColor"/><path d="M5 7V5a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>本页内容已加密，请用任课教师提供的账号登录。</p>
+  <label for="un">用户名</label>
+  <input id="un" type="text" autocomplete="username" autocapitalize="characters" spellcheck="false" required>
+  <label for="pw">密码</label>
+  <input id="pw" type="password" autocomplete="current-password" required>
+  <button id="go" type="submit">进入</button>
+  <div class="msg" id="msg" role="status" aria-live="polite"></div>
+</form>
+<noscript><p style="text-align:center">需要启用 JavaScript 才能查看本页。</p></noscript>
+<script>
+(()=>{
+const P={"i":"rjKDlZRGpeAk2JEX","c":"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","n":310000,"u":{"fe574963b15e2512a5196fe60c7c24d34e18515d6bdf12b9774ccd1073b5d4f5":{"s":"jd9hEbTWdr76a5LJ/3ic9g==","i":"e+m7lR3tzu+MV2Hq","w":"c5iFuPyYZo/KNeqH0m8twMTAnAryj0CYyN8NT+On3ARoPlRIOil3VdmPKw0MQ+KD"},"9b0e2ae93d55cc54ed35b0485d6b52add0f85b492d96861dce77ad1679ceec95":{"s":"4qXyqMqmYkmmXUCEEuvSCQ==","i":"kPW0IrgyMw4saoDU","w":"a4R/z7QsrAUTMNTpG977Pa3btq8+u3NK7dnU/qw8QoiT0mJTiCME8TeOWxav14P+"}}};
+const LOG_URL="https://script.google.com/macros/s/AKfycbyFeZy8WXYMRqrjsKfQM2C6Co5_l967arg7ZbxiKP6YTxxjbG4xR2QgkxRsGtiexa2M/exec";
+const GROUP="nma";
+const SK='course-cred:'+GROUP;
+const b64=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+const enc=s=>new TextEncoder().encode(s);
+const f=document.getElementById('f'),un=document.getElementById('un'),pw=document.getElementById('pw'),go=document.getElementById('go'),msg=document.getElementById('msg');
+try{un.value=localStorage.getItem('course-user')||'';}catch(e){}
+let auto=false;
+if(GROUP){try{const c=JSON.parse(sessionStorage.getItem(SK)||'null');if(c&&c[0]&&c[1]){un.value=c[0];pw.value=c[1];auto=true;}}catch(e){}}
+if(un.value)pw.focus();else un.focus();
+if(!(window.crypto&&crypto.subtle)){msg.className='msg err';msg.textContent='当前浏览器不支持解密，请用最新版 Chrome、Edge、Safari 或 Firefox 通过 https 网址打开。';go.disabled=true;}
+const hex=buf=>[...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('');
+function log(u,ok){
+  if(!LOG_URL)return;
+  const body=JSON.stringify({u,ok,p:document.title,ua:navigator.userAgent});
+  try{fetch(LOG_URL,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain'},body}).catch(()=>{});}
+  catch(e){try{navigator.sendBeacon(LOG_URL,new Blob([body],{type:'text/plain'}));}catch(_){}}
+}
+f.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const user=un.value.trim().toUpperCase(); if(!user||!pw.value)return;
+  go.disabled=true; msg.className='msg'; msg.textContent='正在验证…';
+  try{
+    const uid=hex(await crypto.subtle.digest('SHA-256',enc(user)));
+    const rec=P.u[uid]; if(!rec)throw new Error('no user');
+    const base=await crypto.subtle.importKey('raw',enc(pw.value),'PBKDF2',false,['deriveKey']);
+    const wk=await crypto.subtle.deriveKey({name:'PBKDF2',salt:b64(rec.s),iterations:P.n,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['decrypt']);
+    const K=await crypto.subtle.decrypt({name:'AES-GCM',iv:b64(rec.i)},wk,b64(rec.w));
+    const ck=await crypto.subtle.importKey('raw',K,'AES-GCM',false,['decrypt']);
+    const buf=await crypto.subtle.decrypt({name:'AES-GCM',iv:b64(P.i)},ck,b64(P.c));
+    const html=new TextDecoder().decode(buf);
+    try{localStorage.setItem('course-user',user);}catch(e){}
+    if(GROUP){try{sessionStorage.setItem(SK,JSON.stringify([user,pw.value]));}catch(e){}}
+    log(user,true);
+    document.open(); document.write(html); document.close();
+  }catch(err){
+    if(auto){auto=false;try{sessionStorage.removeItem(SK);}catch(e){} pw.value=''; go.disabled=false; msg.className='msg'; msg.textContent='请重新登录。'; return;}
+    log(user,false);
+    go.disabled=false; msg.className='msg err'; msg.textContent='用户名或密码不正确，请再试一次（密码区分大小写）。'; pw.select();
+  }
+});
+if(auto){msg.textContent='已登录过本课程，正在自动进入…';(f.requestSubmit?f.requestSubmit():f.dispatchEvent(new Event('submit',{cancelable:true})));}
+})();
+</script>
+</body></html>
